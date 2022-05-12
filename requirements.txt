@@ -1,9 +1,0 @@
-pandas
-numpy
-matplotlib
-seaborn
-plotly
-streamlit
-sklearn
-nltk
-spacy
