@@ -156,7 +156,7 @@ choice = st.selectbox("Menu",menu)
 if choice:
     reason = choice
     st.write('There might be some more unlooked reasons for you focus as well, based on similar challenges faced by other businesses.')
-    st.write("Businesses with your chosen issue also face challenges in:")
+    st.write("Businesses with your chosen issue have also faced challenges in:")
     st.write(get_recommendations(reason, indices))
     st.write('We recommend you to also keep a close eye on the above reasons if applicable to your business and see if you have been missing out on any of these reasons which can become a pain-point in the future.')
 
