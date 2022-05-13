@@ -106,20 +106,6 @@ fig5.show()
 st.plotly_chart(fig5)
 
 
-Reasons=df['Failure point']
-Percent=df['Percent']
-fig = go.Figure(data=[go.Pie(labels=Reasons, values=Percent, insidetextorientation='radial', 
-                            title='Failure points in decreasing order Pie-chart', titlefont_size=20)])
-fig.update_traces(hoverinfo='label+value', textinfo='label', textfont_size=12,
-                  marker=dict(colors=Percent), showlegend=False, )
-fig.update_layout(hovermode="y", height=950, width=1000,
-                  hoverlabel=dict(bgcolor="white",
-                                  font_size=16,
-                                  font_family="Rockwell"
-                                 ))
-fig.show()
-st.plotly_chart(fig)
-
 ###### RECOMMENDATION SYSTEM
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
