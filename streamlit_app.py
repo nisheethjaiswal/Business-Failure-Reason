@@ -151,11 +151,13 @@ def get_recommendations(reason, indices, cosine_sim=cosine_sim):
 
     return data['Failure_reasons'].iloc[indices]
 
-st.subheader("Mention a challenge to overcome in your business from the given list of reasons")
+st.subheader("Select the index for a challenge mentioned in the above table which you feel you need to overcome in your business")
 choice = st.selectbox("Menu",menu)
 if choice:
     reason = choice
-    st.write("Businesses with this issue also face challenges in")
+    st.write('There might be some more unlooked reasons for you focus as well, based on similar challenges faced by other businesses.')
+    st.write("Businesses with your chosen issue also face challenges in:")
     st.write(get_recommendations(reason, indices))
+    st.write('We recommend you to also keep a close eye on the above reasons if applicable to your business and see if you have been missing out on any of these reasons which can become a pain-point in the future.')
 
 
