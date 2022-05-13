@@ -126,8 +126,7 @@ from sklearn.metrics.pairwise import linear_kernel
 
 data = pd.read_excel('Pivot.xlsx')
 st.title('Failure reasons and Pivot points in different Categories')
-#st.write(data)
-st.table(data)
+#st.table(data)
 
 tfidf = TfidfVectorizer(stop_words='english')
 tfidf_matrix = tfidf.fit_transform(data['Category'])
@@ -140,7 +139,6 @@ indices = pd.Series(data.index, index=data['Failure_reasons']).drop_duplicates()
 st.subheader('Indices to choose from for the failure reasons')
 st.table(indices)
 menu = indices
-#choice = st.sidebar.selectbox("Menu",menu)
 
 
 def get_recommendations(reason, indices, cosine_sim=cosine_sim):
@@ -155,8 +153,9 @@ def get_recommendations(reason, indices, cosine_sim=cosine_sim):
 
 st.subheader("Mention a challenge to overcome in your business from the given list of reasons")
 choice = st.selectbox("Menu",menu)
-reason = choice
-st.write("Businesses with this issue also face challenges in")
-st.write(get_recommendations(reason, indices))
+if choice:
+    reason = choice
+    st.write("Businesses with this issue also face challenges in")
+    st.write(get_recommendations(reason, indices))
 
 
