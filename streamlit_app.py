@@ -153,7 +153,7 @@ def get_recommendations(reason, indices, cosine_sim=cosine_sim):
 
 st.subheader("Mention a challenge to overcome in your business from the given list of reasons")
 choice = st.selectbox("Menu",menu)
-if choice == indices:
+if choice:
     reason = choice
     st.write("Businesses with this issue also face challenges in")
     st.write(get_recommendations(reason, indices))
