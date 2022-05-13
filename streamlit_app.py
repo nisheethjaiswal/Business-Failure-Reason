@@ -137,7 +137,7 @@ cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
 global indices
 
 indices = pd.Series(data.index, index=data['Failure_reasons']).drop_duplicates()
-st.subtitle('Indices to choose from for the failure reasons')
+st.subheader('Indices to choose from for the failure reasons')
 st.table(indices)
 menu = indices
 #choice = st.sidebar.selectbox("Menu",menu)
@@ -153,7 +153,7 @@ def get_recommendations(reason, indices, cosine_sim=cosine_sim):
 
     return data['Failure_reasons'].iloc[indices]
 
-st.subtitle("Mention a challenge to overcome in your business from the given list of reasons")
+st.subheader("Mention a challenge to overcome in your business from the given list of reasons")
 choice = st.selectbox("Menu",menu)
 reason = choice
 st.write("Businesses with this issue also face challenges in")
